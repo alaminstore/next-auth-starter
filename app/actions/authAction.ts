@@ -10,5 +10,5 @@ export async function doSocialLogin(formData: FormData): Promise<void> {
 
 // Sign Out
 export async function doLogOut(): Promise<void> {
-  await signOut({ redirectTo: "/" });
+  await signOut({ redirectTo: "/login" });
 }
