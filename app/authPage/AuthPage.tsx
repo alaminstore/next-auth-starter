@@ -3,6 +3,7 @@
 import { doSocialLogin } from "@/app/actions/authAction";
 import Image from "next/image";
 import { useState } from "react";
+import OauthSignIn from "../components/OauthSignIn";
 
 export default function AuthPage() {
   const [isRegister, setIsRegister] = useState(false);
@@ -111,24 +112,8 @@ export default function AuthPage() {
           )}
         </div>
 
-        {/* Google Sign-in */}
-        <form action={doSocialLogin}>
-          <button
-            type="submit"
-            name="action"
-            value="google"
-            className="w-full border border-gray-300 py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition cursor-pointer"
-          >
-            <Image
-              width={100}
-              height={100}
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
-              alt="google"
-              className="w-5 h-5"
-            />
-            Sign in with Google
-          </button>
-        </form>
+        {/* Social Sign-in */}
+        <OauthSignIn />
       </div>
     </div>
   );
